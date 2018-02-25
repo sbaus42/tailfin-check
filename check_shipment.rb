@@ -7,7 +7,7 @@ load 'secrets.rb'
 page = HTTParty.get SITE
 status = page["parcels"]["parcel"]["deliveryStatus"]["status"]
 
-if status.length > 7
+if status.length > 8
   # Load client
   @client = Twilio::REST::Client.new SID, AUTH
 
