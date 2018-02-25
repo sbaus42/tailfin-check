@@ -2,7 +2,6 @@ require 'httparty'
 require 'nokogiri'
 require 'twilio-ruby'
 require 'pry'
-load 'twilio_setup.rb'
 load 'secrets.rb'
 
 page = HTTParty.get SITE
