@@ -15,6 +15,9 @@ Making the file executable was a must for this process. I didn't want to create 
 all of the RVM variables since `/usr/bin/env ruby` by default looks at a different ruby version.
 This caused a lot of issues with the gem library. I still have to manage to get this working on my DO server.
 
+### DO NOT FORGET:
+Make sure you run `rvm cron setup` so cron uses the correct rubies 
+
 # Learnings
 - Cron is the shit
 - #! is pretty interesting and learning more about the intepreter selected should be an interesting read.
