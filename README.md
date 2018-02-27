@@ -19,3 +19,7 @@ This caused a lot of issues with the gem library. I still have to manage to get 
 - Cron is the shit
 - #! is pretty interesting and learning more about the intepreter selected should be an interesting read.
 - Still need to figure out how to change the number of entries to check without using a database... Writing to a file seems like the way to go
+- Grepping syslogs for cron jobs will let you know what jobs are running, like this:
+```bash
+sudo grep CRON /var/log/syslog 
+```
