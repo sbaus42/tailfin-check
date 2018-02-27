@@ -1,13 +1,15 @@
+#!/usr/bin/env ruby
 require 'httparty'
 require 'nokogiri'
 require 'twilio-ruby'
 require 'pry'
-load 'secrets.rb'
+require_relative './secrets'
 
 page = HTTParty.get SITE
 status = page["parcels"]["parcel"]["deliveryStatus"]["status"]
+entries = 8
 
-if status.length > 8
+if status.length > entries
   # Load client
   @client = Twilio::REST::Client.new SID, AUTH
 
@@ -15,6 +17,6 @@ if status.length > 8
   @client.messages.create(
    from: TWI_NUMBA,
    to: MY_NUMBA,
-   body: "New entry at #{SITE}"
+   body: "New entry (there are now #{status.length})at #{SITE}"
   )
 end
